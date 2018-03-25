@@ -8,11 +8,7 @@ rake_object = rake.Rake("stopwords_pt.txt", 4, 3, 0)
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-  return 'Hello, World!'
-
-@app.route('/texto')
-@app.route("/texto/<text>".decode('utf-8'))
+@app.route("/<text>".decode('utf-8'))
 def home(text=""):
 	text = text.decode('base64')
 	keywords = rake_object.run(text)
@@ -29,6 +25,6 @@ def home(text=""):
 	return myList
 	
 if __name__ == '__main__':
-    app.run()
+    app.run(host = 'localhost', port = 5000)
     # http://localhost:5000/
     # {"lista": ["python", "eh", "lindo"]}
