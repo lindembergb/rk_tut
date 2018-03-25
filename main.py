@@ -12,8 +12,6 @@ app = Flask(__name__)
 def home(text=""):
 	text = text.decode('base64')
 	keywords = rake_object.run(text)
-	#print "Keywords:", keywords
-	#print text
 	kw = []
 	for name in keywords:
 		if  name[1]>1:
@@ -21,10 +19,7 @@ def home(text=""):
 
 	myList = ','.join(map(str, kw))
 
-	#print myList
 	return myList
 	
 if __name__ == '__main__':
-    app.run(host = 'localhost', port = 5000)
-    # http://localhost:5000/
-    # {"lista": ["python", "eh", "lindo"]}
+    app.run()
