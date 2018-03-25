@@ -10,6 +10,10 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
   return 'Hello, World!'
+  
+@app.route('/oi')
+def hello_world():
+  return 'Hello, World!'
 
 @app.route('/texto')
 @app.route("/texto/<text>".decode('utf-8'))
