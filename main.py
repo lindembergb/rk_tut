@@ -12,7 +12,7 @@ def hello_world():
   return 'Hello, World!'
   
 @app.route('/oi')
-def hello_world():
+def hellworld():
   return 'Hello, World!'
 
 @app.route('/texto')
